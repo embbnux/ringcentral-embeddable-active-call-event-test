@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  // Add widget
+  (function() {
+    var rcs = document.createElement("script");
+    rcs.src = "https://apps.ringcentral.com/integration/ringcentral-embeddable/latest/adapter.js?disableInactiveTabCallEvent=1";
+    var rcs0 = document.getElementsByTagName("script")[0];
+    rcs0.parentNode.insertBefore(rcs, rcs0);
+  })();
+  window.addEventListener('message', (e) => {
+    const data = e.data;
+    if (data) {
+      switch (data.type) {
+        case 'rc-active-call-notify':
+          // get call on active call updated event
+          console.log(`Active call session ID: ${data.call.telephonySessionId}, status: ${data.call.telephonyStatus}`);
+          break;
+        default:
+          break;
+      }
+    }
+  });
+</script>
+</body>
+</html>
