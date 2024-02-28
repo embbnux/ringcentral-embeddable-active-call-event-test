@@ -19,8 +19,11 @@
           break;
         case 'rc-message-updated-notify':
           // get message from widget event
-          console.log('SMS notification:', data.message.messageStatus, data.message.readStatus, data.message);
-        break;
+          console.log('SMS updated notification:', data.message.messageStatus, data.message.readStatus, data.message);
+          break;
+        case 'rc-inbound-message-notify':
+          console.log('SMS inbound notification:', data.message.messageStatus, data.message.readStatus, data.message);
+          break;
         default:
           break;
       }
