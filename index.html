@@ -17,6 +17,10 @@
           // get call on active call updated event
           console.log(`Active call session ID: ${data.call.telephonySessionId}, status: ${data.call.telephonyStatus}`);
           break;
+        case 'rc-message-updated-notify':
+          // get message from widget event
+          console.log('SMS notification:', data.message.messageStatus, data.message.readStatus, data.message);
+        break;
         default:
           break;
       }
