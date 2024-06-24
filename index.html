@@ -24,6 +24,9 @@
         case 'rc-inbound-message-notify':
           console.log('SMS inbound notification:', data.message.messageStatus, data.message.readStatus, data.message);
           break;
+        case 'rc-telephony-session-notify':
+          console.log('Telephony session notification:', data.telephonySession);
+          break;
         default:
           break;
       }
